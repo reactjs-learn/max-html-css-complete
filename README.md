@@ -238,13 +238,13 @@ In the button, we can check that in the focus state.
 }
 ```
 
-### 1.5. The float and clearfix for fixing the float (the following element)
+#### 1.4.6. The float and clearfix for fixing the float (the following element)
 
 The float will remove the element from the dom display -> the next el will overflow to the place the element has left.
 
 -> using clearfix to fix the float problem.
 
-### 1.6. Fixing the border-left when using in id selector
+#### 1.4.7. Fixing the border-left when using in id selector
 
 The best practice is to define the new border-left-color in hover and active instead of using !important
 
@@ -255,6 +255,82 @@ The best practice is to define the new border-left-color in hover and active ins
 }
 ```
 
-### 1.4. POSITIONING
+### 1.5. POSITIONING
 
-#### 1.4.1.
+#### 1.5.1. Basic of position prop
+
+- The default for postion prop is static.
+- Others: absolute, relative, fixed, sticky.
+
+THE CONCEPT: top, bottom, left, right -> apply to document flow. Positioning Context.
+
+#### 1.5.2. The fixed value
+
+- Stick to the viewport
+- Using top, bottom, left, right to position
+
+```css
+.main-header {
+  width: 100%;
+  background: #2ddf5c;
+  padding: 8px 16px;
+  /* If html element config the margin then top and left need to be used */
+  /* top: 0; left: 0; */
+  position: fixed;
+}
+```
+
+Using fixed to render the background image
+
+```css
+.background {
+  background: url(../images/plans-background.jpg);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+```
+
+The z-index: The default value of z-index is 0 (auto)
+
+#### 1.5.4. The absolute value
+
+The absolute value render will depend on the ancestor.
+-> If ancestor NOT have position prop -> attach to the html element
+-> If HAVE -> attach to the ancestor
+
+Example of using relative and absolute to hook the recommend text inside the package box:
+
+```css
+.package {
+  width: 80%;
+  margin: 16px 0;
+  border: 4px solid #0e4f1f;
+  border-left: none;
+  position: relative;
+}
+
+.package__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  font-size: 12px;
+  color: white;
+}
+```
+
+#### 1.5.5. The relative value
+
+Define how the element should move from it's current position. (other based on the position of parent)
+
+#### 1.5.6. The stacking context
+
+#### 1.5.7. Summary of Position
+
+### 1.6. BACKGROUND AND IMAGES
+
+### 1.7. SIZES AND UNITS
+
+#### 1.7.1.
