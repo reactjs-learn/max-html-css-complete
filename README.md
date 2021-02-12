@@ -331,6 +331,39 @@ Define how the element should move from it's current position. (other based on t
 
 ### 1.6. BACKGROUND AND IMAGES
 
+#### 1.6.1. Background props
+
+- background-size: 100% auto, cover. Config size of the background image (w h)
+- background-repeat: reapeat, no-repeat, repeat-y, repeat-x
+
+When setting background-size to 100% (w) -> the image crop to fit the height but keeping the aspect ratio.
+
+- background-position: x y. Define how left and top of image position in relation to container. If set to % -> percent of excess space go in to the top or left.
+
+  > center the image by setting background-postion: 50% 50%. 50% excess will be cropped at the top -> 50% remain go to bottom.
+
+- background-origin: border-box (default is content-box -> without border and padding). Use to fit image to cover through the border as well. Other value: padding-box.
+- background-clip: padding-box. Where the image should be clipped if necessary.
+- background-attachment: fixed (scroll, local)
+
+```css
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-position: left 10% right 20%;
+background-origin: border-box;
+border: red dotted 10px;
+```
+
+Shorthand for all of the above setting:
+
+```css
+background: url("./freedom.jpg") left 10% bottom 20% / cover no-repeat
+  border-box;
+```
+
+#### 1.6.2. Styling the images
+
 ### 1.7. SIZES AND UNITS
 
 #### 1.7.1.
