@@ -364,6 +364,8 @@ background: url("./freedom.jpg") left 10% bottom 20% / cover no-repeat
 
 #### 1.6.2. Styling the images
 
+The default behavior is if you enter the image tag -> The size of image will automatically set (to the height of image) no matter how much height you set your div container height.
+
 ### 1.7. SIZES AND UNITS
 
 #### 1.7.1.
