@@ -297,7 +297,7 @@ The z-index: The default value of z-index is 0 (auto)
 #### 1.5.4. The absolute value
 
 The absolute value render will depend on the ancestor.
--> If ancestor NOT have position prop -> attach to the html element
+-> If ancestor NOT have position prop (# position: static) -> attach to the html element
 -> If HAVE -> attach to the ancestor
 
 Example of using relative and absolute to hook the recommend text inside the package box:
@@ -410,4 +410,36 @@ background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
 
 ### 1.7. SIZES AND UNITS
 
-#### 1.7.1.
+Dealing with the zoom affected font size in browser, % value of width.
+
+1. Which props to use the units?
+
+2. How is the size calculated?
+
+#### 1.7.1. 3 Rules to remember
+
+> R1. Element: position fixed (the containing block) -> the % will be calculated base on the vh/vw value (viewport value)
+> R2. Element: position absolute (the ancestor + padding) -> % refers to direct ancestors content + padding.
+> R3. Element: position static/relative (the ancestor content) -> % % refer to block level ancestor content. [block level]
+
+R2 and R3 will find the nearest block level element and fit the width calculated base on that element.
+
+The relative position will not allow the z-index prop.
+
+#### 1.7.2. The issue when using relative position and the % unit
+
+If using the backdrop of 100% and relative to the body element. The width will automatically set to body width but the height can't be calculated because the height of the body will fit accordingly with the height of its content.
+
+```css
+.backdrop {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+```
+
+The margin collapse issue.
+
+#### 1.7.3. Using the max-width and max-height
