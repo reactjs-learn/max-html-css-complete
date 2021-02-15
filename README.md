@@ -364,6 +364,50 @@ background: url("./freedom.jpg") left 10% bottom 20% / cover no-repeat
 
 #### 1.6.2. Styling the images
 
+#### 1.6.3. Using the Gradients
+
+Gradients are like using the normal background image.
+
+The default of gradient is from top to bottom (vertical)
+
+```css
+/* LINEAR GRADIENT */
+background-image: linear-gradient(to left bottom, red, blue);
+background-image: linear-gradient(30deg, red, blue);
+background-image: linear-gradient(
+  to bottom,
+  red 70%,
+  blue,
+  green,
+  transparent,
+  rgba(0, 0, 0, 0.5)
+);
+
+/* RADIAL GRADIENT */
+background-image: radial-gradient(circle, red, green);
+background-image: radial-gradient(circle at 20% 50%, red, green);
+background-image: radial-gradient(circle 20px 80px at 20% 50%, red, green);
+background-image: radial-gradient(
+  ellipse farthest-side at 20% 50%,
+  /* farthest-corner, closest-side, closest-corner */ red,
+  green,
+  blue
+);
+```
+
+#### 1.6.4. Using Multiple Backgrounds
+
+Set different background by using "," seperator.
+
+```css
+background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+  url("images/freedom.jpg") left 10% bottom 20% / cover no-repeat border-box, #ff1b68;
+```
+
+#### 1.6.5. Using Filters
+
+> <https://developer.mozilla.org/en-US/docs/Web/CSS/filter>
+
 ### 1.7. SIZES AND UNITS
 
 #### 1.7.1.
