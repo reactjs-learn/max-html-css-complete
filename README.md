@@ -443,3 +443,85 @@ If using the backdrop of 100% and relative to the body element. The width will a
 The margin collapse issue.
 
 #### 1.7.3. Using the max-width and max-height
+
+The problem of em: EM inherits size of previous sizes and multiply em with previous em.
+REM: em but using the root element only (not inherit from the previous em).
+
+#### 1.7.4. Recommended unit base on the elements
+
+![Recommended units](./readme-imgs/recommended-unit.png)
+
+#### 1.7.5. Center the element
+
+Using the margin auto.
+
+> Margin auto only works for block level elements with an explicitly assigned width
+
+#### 1.7.6. Summary of the units and sizes module
+
+![Recommended units](./readme-imgs/size-unit-summary.png)
+
+### 1.8. ADDING JS TO CSS
+
+1. Using the querySelector -> el.style.display = none;
+
+2. Coding of side nav (for mobile)
+
+### 1.9. MAKING OUR WEB RESPONSIVE
+
+#### 1.9.1. Hadware pixels vs Software pixels
+
+<https://www.mydevice.io/#compare-devices>
+
+Pixel ratio: The physical w/h / pixel-ratio -> CSS w/h
+
+> Add the meta tag viewport -> The browser will have ability to recognize the device
+
+```html
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0, minimum-scale=1.2"
+/>
+```
+
+#### 1.9.2. Different between the viewport meta tag and @media
+
+The viewport -> translate the pixel base on the device -> no design changes.
+
+@media: change the design depend on the size.
+
+> DESIGN MOTTO: MOBILE FIRST
+
+#### 1.9.3. Using the @media query
+
+> @media is like the if statement
+> For the mobile first design -> any code inside @media will be for the desktop ->
+
+```css
+@media (min-width: 40rem) {
+  #product-overview {
+    height: 40vh;
+    background-position: 50% 25%;
+  }
+}
+```
+
+The code css will be cascade -> codes that come after will take into action.
+
+-> The @media should in the end of css files.
+
+> The break point to use in @media query: Ref the website <https://www.mydevice.io/#compare-devices>
+
+#### 1.9.3. Some conditions of the media query
+
+```css
+/* AND */
+@media (min-width: 40rem) and (min-height: 40rem) {
+}
+@media (min-width: 40rem) and (orientation: portrait) {
+}
+
+/* OR */
+@media (min-width: 40rem), (orientation: portrait) {
+}
+```
