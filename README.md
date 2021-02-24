@@ -525,3 +525,59 @@ The code css will be cascade -> codes that come after will take into action.
 @media (min-width: 40rem), (orientation: portrait) {
 }
 ```
+
+### 1.10. ADDING AND STYLING FORMS
+
+### 1.11. WORKING WITH TEXT AND FONTS
+
+### 1.12. ADDING FLEXBOX TO OUR PROJECTS
+
+Parent element is Flex Container.
+Children element is Flex Items.
+
+Properties using in Flex Container: flex-flow, justify-content, align-content, align-items.
+
+Props using in Children Item: order, flex, align-self.
+
+#### 1.12.1. Flex Container
+
+When define the display flex on Flex Container ->
+
+- The height get the largest defined height of flex items (other with no height defined will auto get this value)
+- The item will shrink the width to the point for fitting the contents into the container.
+
+If using the inline-flex: The defined width els will remain and the container not change width.
+
+The auto apply when using flex
+
+```css
+.flex-container {
+  display: flex;
+  flex-direction: row /* column, column-reverse, row-reverse */;
+  flex-wrap: nowrap; /* wrap-reverse */
+  /* flex-flow: row wrap */
+  align-items: center;
+  justify-content: center;
+}
+```
+
+#### 1.12.2. Main Axis - Cross Axis
+
+The align-items prop always apply to the cross axis.
+The justify-content prop apply to the main axis.
+
+> Summary of justify-content and align-items base on the axis
+
+> Basic concept of flexbox ref: <>
+
+align-items: baseline -> using base on the font baseline to align the items.
+
+align-content prop.
+
+#### 1.12.3. Flex Items
+
+### 1.13. USING THE CSS GRID
+
+### 1.14. TRANSFORM CSS USING TRANSFORMS
+
+### 1.15. TRANSITIONS AND ANIMATIONS IN CSS
